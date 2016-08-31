@@ -53,7 +53,9 @@ AppAsset::register($this);
         $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = ['label' => '我的股票', 'url' => ['/user/stock']];
+       
+        $menuItems[] = ['label' => '我的', 'url' => ['/user/my']];
+        $menuItems[] = ['label' => '搜索', 'url' => ['/user/search']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
