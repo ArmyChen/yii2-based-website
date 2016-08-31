@@ -1,3 +1,5 @@
+var url = "/red/frontend/web/index.php?r=";
+
 $(function(){
    setTimeout("refreshIndex()",1000);
 });
@@ -14,10 +16,19 @@ function refreshIndex() {
     $("#currenttime").html("当前时间："+ new Date().Format("yyyy-MM-dd hh:mm:ss"));
     setTimeout("refreshIndex()", 1000);
 }
-
- function refreshTable(){
+function saveSearch(){
+    $.ajax({
+               url: url + "user%2Fsave",
+               type:"get",
+               data: {"code": $.trim($("#code").html()),"name": $.trim($("#name").html())},
+               success:function(e){
+                   alert(e);
+               }
+           });
+}
+function refreshTable(){
         $.ajax({
-               url:"/frontend/web/index.php?r=user%2Fajax",
+               url: url + "user%2Fajax",
                type:"get",
                data: {},
                success:function(e){

@@ -1,2 +1,2 @@
 <?
-header("location:/backend/web/");
+header("location:/red/backend/web/");

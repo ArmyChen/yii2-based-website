@@ -86,14 +86,7 @@ if(!empty($search)){
 $this->registerJs(
    '$("document").ready(function(){ 
        $("#fav").click(function(){
-           $.ajax({
-               url:"/frontend/web/index.php?r=user%2Fsave",
-               type:"get",
-               data: {"code": $.trim($("#code").html()),"name": $.trim($("#name").html())},
-               success:function(e){
-                   alert(e);
-               }
-           });
+           saveSearch();
        });
     });'
 );
